@@ -1,7 +1,5 @@
-def fib(n)
-    return ( n==1 || n==2 ) ? 1 : fib(n.abs-1)+fib(n.abs-2)
-end
 def signfib(sn)
-    return ((sn < 0) && (sn % 2).zero?) ? -1*fib(sn.abs) : fib(sn.abs)
+    fibn = (1..sn.to_i.abs).inject([0, 1]){ | fbn | fbn << fbn.last(2).inject(:+) }
+    return ((sn.to_i < 0) && (sn.to_i.abs % 2).zero?) ? -1*fibn[-1] : fibn[-1]
 end
-puts signfib(ARGV[0].to_i)
+puts signfib(ARGV[0])
