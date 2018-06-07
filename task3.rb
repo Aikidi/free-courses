@@ -1,5 +1,5 @@
 forParse = ARGV.join.scan(/\w/).join
-strVowel = forParse.scan(/[EYUIOAeyuioa]/).join
-strCnsnnt = forParse.scan(/[^EYUIOAeyuioa\d]/).join
-strNumber = forParse.scan(/\d/).join
+a = strVowel = forParse.scan(/[EYUIOAeyuioa]/).join
+b = strCnsnnt = forParse.scan(/[^EYUIOAeyuioa\d]/).join
+c = strNumber = forParse.scan(/\d/).join
 puts strVowel+" "+strCnsnnt+" "+strNumber
