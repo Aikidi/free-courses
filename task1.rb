@@ -1,1 +1,1 @@
-puts ARGV.join.upcase.split.join.scan(/\w/).join.eql?(ARGV.join.upcase.split.join.scan(/\w/).join.reverse) ? 'YES' : 'NO'
+puts ARGV.join.upcase.scan(/\w/).eql?(ARGV.join.upcase.scan(/\w/).reverse) ? 'YES' : 'NO'
