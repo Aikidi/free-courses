@@ -1,13 +1,14 @@
 def getStrSum (fstStr, secStr, resStr = "0")
     fS, sS, rS = fstStr.reverse, secStr.reverse, resStr
+    while (sS.length>fS.length) do fS = fS+"0" end
     i=0
     begin
-        lR = (fS[i].to_i + sS[i].to_i + rS[i].to_i).to_s.reverse!()
-        rS[i] = lR[0]
-        (lR[1].nil?) ?  rS += "0" : rS += lR[1]
+        lR = (fS[i].to_i + sS[i].to_i + rS[i].to_i) 
+        rS[i] = (lR % 10).to_s
+        rS+=(lR/10).to_i.to_s
         i += 1
     end while (i<=(sS.length-1))
-    return (lR[1].nil?) ? rS.chop!.reverse! : rS.reverse!
+    return ((lR/10).to_i.zero?) ? rS.chop!.reverse! : rS.reverse!
 end
 
 def getFibAccum(n)
