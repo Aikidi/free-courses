@@ -1,3 +1,4 @@
+require 'bigdecimal'
 def getFibGen(n)
   fib = Enumerator.new do |y|
     f0, f1 = 0, 1
